@@ -73,6 +73,10 @@ To install the script, run this command in the "bash" terminal tab of the Cloud9
 
 image:cloud9-run-script.png[Running the script in Cloud9 Terminal]
 
+Once installation is complete, run the following command to set the region for the aws-cli:
+
+    aws configure set default.region your-region-id
+    aws configure get default.region
 
 At this point you can restart the Cloud9 IDE terminal session to ensure that the kubectl completion is enabled. Once a new terminal window is opened, type `kubectl ver` and press `Tab` to autocomplete and press `Enter`. This will ensure that the `kubectl` tool is installed on the command line correctly and can autocomplete.
 
