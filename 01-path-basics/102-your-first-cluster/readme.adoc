@@ -56,7 +56,7 @@ Cluster provisioning usually takes less than 10 minutes. You can query the statu
 
     $ aws eks describe-cluster --name k8s-workshop --query cluster.status --output text
 
-NOTE: If you receive an *UnsupportedAvailabilityZoneException* error during EKS cluster creation, your account is using an AZ that is currently resource constrained. This occurs mostly in N.Virginia region (us-east-1).
+Note: If you receive an *UnsupportedAvailabilityZoneException* error during EKS cluster creation, your account is using an AZ that is currently resource constrained. This occurs mostly in N.Virginia region (us-east-1).
 
 ```
 An error occurred (UnsupportedAvailabilityZoneException) when calling the CreateCluster operation: Cannot create cluster 'k8s-workshop' because us-east-1c,
