@@ -52,11 +52,6 @@ Create a Kubernetes cluster using the following command. Run it in the "bash" te
 
 The `EKS_SERVICE_ROLE`, `EKS_SUBNET_IDS`, and `EKS_SECURITY_GROUPS` environment variables should have been set during the link:../101-start-here[Cloud9 Environment Setup].
 
-<details>
-<summary><strong>
-HOW TO fix *UnsupportedAvailabilityZoneException* error
-</strong></summary>
-<p>
 If you receive an *UnsupportedAvailabilityZoneException* error during EKS cluster creation, your account is using an AZ that is currently resource constrained. This occurs mostly in N.Virginia region (us-east-1).
 
 ```
@@ -104,8 +99,7 @@ Re-run EKS create-cluster and you should now be able to create cluster. The outp
         "createdAt": 1532734869.147
     }
     }
-</details>
-<p>
+
 Cluster provisioning usually takes less than 10 minutes. You can query the status of your cluster with the following command. When your cluster status is `ACTIVE`, you can proceed.
 
     $ aws eks describe-cluster --name k8s-workshop --query cluster.status --output text
