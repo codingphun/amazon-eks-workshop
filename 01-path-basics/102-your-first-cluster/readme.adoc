@@ -52,22 +52,6 @@ Create a Kubernetes cluster using the following command. Run it in the "bash" te
 
 The `EKS_SERVICE_ROLE`, `EKS_SUBNET_IDS`, and `EKS_SECURITY_GROUPS` environment variables should have been set during the link:../101-start-here[Cloud9 Environment Setup].
 
-Cluster provisioning usually takes less than 10 minutes. You can query the status of your cluster with the following command. When your cluster status is `ACTIVE`, you can proceed.
-
-    $ aws eks describe-cluster --name k8s-workshop --query cluster.status --output text
-
-Note: If your 'create cluster' fails with an error like:
-```
-aws: error: argument --role-arn: expected one argument
-```
-Please confirm the following environment variables are set before executing the 'create cluster' command:
-```
-echo $EKS_SERVICE_ROLE
-echo $EKS_SUBNET_IDS
-echo $EKS_SECURITY_GROUPS
-```
-If any of those environment variables are blank, please re-run the "Build Script" section of the link:../101-start-here[Cloud9 Environment Setup].
-
 If you receive an *UnsupportedAvailabilityZoneException* error during EKS cluster creation, your account is using an AZ that is currently resource constrained. This occurs mostly in N.Virginia region (us-east-1).
 
 ```
@@ -115,6 +99,24 @@ Re-run EKS create-cluster and you should now be able to create cluster. The outp
         "createdAt": 1532734869.147
     }
     }
+
+Cluster provisioning usually takes less than 10 minutes. You can query the status of your cluster with the following command. When your cluster status is `ACTIVE`, you can proceed.
+
+    $ aws eks describe-cluster --name k8s-workshop --query cluster.status --output text
+
+Note: If your 'create cluster' fails with an error like:
+```
+aws: error: argument --role-arn: expected one argument
+```
+Please confirm the following environment variables are set before executing the 'create cluster' command:
+```
+echo $EKS_SERVICE_ROLE
+echo $EKS_SUBNET_IDS
+echo $EKS_SECURITY_GROUPS
+```
+If any of those environment variables are blank, please re-run the "Build Script" section of the link:../101-start-here[Cloud9 Environment Setup].
+
+
 
 === Create the configuration file
 
